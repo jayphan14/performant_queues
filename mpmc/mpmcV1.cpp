@@ -5,9 +5,9 @@
 // full when head + 1 == tail
 
 template <typename T>
-class MPMC {
+class MPMCV1 {
 public:
-    MPMC(size_t size): cap(size + 1), queue(size + 1) {};
+    MPMCV1(size_t size): cap(size + 1), queue(size + 1) {};
 
     void push(T item) {
         std::unique_lock<std::mutex> lock(mtx); 
